@@ -12,4 +12,5 @@ public class WelcomeController {
     public String index() {
         return "/welcome/welcome";
     }
+
 }

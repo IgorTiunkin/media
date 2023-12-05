@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Media</title>
+</head>
+<body style="background: bisque">
+
+<div>
+    <div style="width: 50%;  margin: 0 auto; font-size: 18px; line-height: 1.5; text-align: justify" >
+        <h2>All Media</h2>
+        <div th:each="media : ${allMedia}" th:text="${media.title}"></div>
+    </div>
+</div>
+
+</body>
+</html>
