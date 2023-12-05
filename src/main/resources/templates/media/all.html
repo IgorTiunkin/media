@@ -9,7 +9,35 @@
 <div>
     <div style="width: 50%;  margin: 0 auto; font-size: 18px; line-height: 1.5; text-align: justify" >
         <h2>All Media</h2>
-        <div th:each="media : ${allMedia}" th:text="${media.title}"></div>
+        <span th:each="media : ${allMedia}">
+            <ul>
+                <li th:text="'Title: ' + ${media.getTitle()}"></li>
+                <li th:text="'Type: ' + ${media.getMediaType()}"></li>
+                <li th:text="'Coverage: ' + ${media.getCoverage()}"></li>
+                <li> Topics
+                <ul>
+                <li th:each="topic : ${media.getMediaTopics()}" th:text="${topic.getTitle()}"></li>
+                </ul>
+                </li>
+                <li>
+                    Contact <br>
+                    <span th:text="'Contact name: ' + ${media.getMediaContact().getContactPersonName()}"></span>
+                    <br>
+                    <span th:text="'Contact surname: ' + ${media.getMediaContact().getContactPersonSurname()}"></span>
+                    <br>
+                    <ul>
+                    <li th:each="number : ${media.getMediaContact().getTelephoneNumber()}"
+                        th:text="'Telephone number: ' + ${number}">
+                    </li>
+                    </ul>
+                    <ul>
+                    <li th:each="email : ${media.getMediaContact().getEmail()}"
+                        th:text="'Email: ' + ${email}">
+                    </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
