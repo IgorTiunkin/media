@@ -21,17 +21,17 @@
                 </li>
                 <li>
                     Contact <br>
-                    <span th:text="'Contact name: ' + ${media.getMediaContact().getContactPersonName()}"></span>
+                    <span th:text="'Contact name: ' + ${media.getMediaContactDTO().getContactPersonName()}"></span>
                     <br>
-                    <span th:text="'Contact surname: ' + ${media.getMediaContact().getContactPersonSurname()}"></span>
+                    <span th:text="'Contact surname: ' + ${media.getMediaContactDTO().getContactPersonSurname()}"></span>
                     <br>
                     <ul>
-                    <li th:each="number : ${media.getMediaContact().getTelephoneNumber()}"
+                    <li th:each="number : ${media.getMediaContactDTO().getTelephoneNumber()}"
                         th:text="'Telephone number: ' + ${number}">
                     </li>
                     </ul>
                     <ul>
-                    <li th:each="email : ${media.getMediaContact().getEmail()}"
+                    <li th:each="email : ${media.getMediaContactDTO().getEmail()}"
                         th:text="'Email: ' + ${email}">
                     </li>
                     </ul>

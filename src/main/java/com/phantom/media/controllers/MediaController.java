@@ -1,5 +1,6 @@
 package com.phantom.media.controllers;
 
+import com.phantom.media.DTO.MediaDTO;
 import com.phantom.media.models.Media;
 import com.phantom.media.services.MediaService;
 import lombok.RequiredArgsConstructor;
@@ -21,9 +22,11 @@ public class MediaController {
 
     @GetMapping("/all")
     public String getAllMedia(Model model){
-        List<Media> allMedia = mediaService.getAllMedia();
+        List<MediaDTO> allMedia = mediaService.getAllMedia();
         model.addAttribute("allMedia", allMedia);
         return "/media/all";
     }
+
+
 
 }
